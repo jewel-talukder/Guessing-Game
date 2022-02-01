@@ -111,10 +111,31 @@
 //  var large = Math.max(a,b,c);
 //  document.write("Large Number = "+large);
 
-var yourNum = Number(prompt("Enter Number between 1-6: "));
-var comNum = Math.floor(Math.random()*5+1);
-if(yourNum == comNum)
-document.write("You Won!!👏")
-else
-document.write("You failed😢 <br> Computer Number is "  + comNum);
+// var yourNum = Number(prompt("Enter Number between 1-6: "));
 
+
+
+function game(){
+
+    var won=0,lost=0;
+    for(var i=0;i<5;i++){
+        var yourNum = Number(prompt("Enter Number between 1-6: "));
+        var comNum = Math.floor(Math.random()*5+1);
+        if(yourNum == comNum){
+            document.write("Your Number is "+yourNum+" ,");
+            document.write("You Won!!👏 <br>")
+            won++;
+        }
+        else{
+            document.write("Your Number is "+yourNum+" ,");
+            document.write("You failed😢, Computer Number is "  + comNum+"<br>");
+            lost++;
+        }
+
+    }
+    document.write("<hr> Final Result: <br>");
+    document.write("You have won " + won + " match <br> You have lost "+lost+" match");
+
+    
+    
+}
